@@ -34,8 +34,11 @@ class CalendarController extends Controller
         $this->setDate($date);
 
         $event = Event::with('representationDay')
-                        ->where([['event_date_from', '<=', $this->getYear().'-'.$this->getMonth().'-01'],
-                                    ['event_date_to', '>=', $this->getYear().'-'.$this->getMonth().'-'.$this->daysHave]])
+                        ->whereYear('event_date_from','<=',$this->getYear())
+                        ->whereYear('event_date_to','>=',$this->getYear())
+
+                        ->whereMonth('event_date_from', '<=' ,$this->getMonth())
+                        ->whereMonth('event_date_to', '>=' ,$this->getMonth())
                         ->get();
         
         $data = array(
