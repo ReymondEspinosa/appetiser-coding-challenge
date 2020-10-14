@@ -1,0 +1,27 @@
+
+th{
+    text-align: center;
+    width: 14.30%;
+}
+
+td{
+    height: 100px;
+}
+
+.clickDay:hover{
+    cursor: pointer;
+    transition: .2s;
+    color: #000000;
+    background: rgb(185, 189, 191);
+}
+
+.today{
+    border-radius: 20px;
+    padding: 4px 7px;
+    color: #ffffff;
+    background: #365a63;
+}  
+
+.appetiser-month{
+    font-size: 22.1px;
+}
